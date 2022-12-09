@@ -1,0 +1,21 @@
+<web-app>
+    <servlet>
+        <servlet-name>MyController</servlet-name>
+        <servlet-class>servlet.ControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AreaCheck</servlet-name>
+        <servlet-class>servlet.AreaCheckServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyController</servlet-name>
+        <url-pattern>/checkPoint</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AreaCheck</servlet-name>
+        <url-pattern>/areaCheck</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>./assets/index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
