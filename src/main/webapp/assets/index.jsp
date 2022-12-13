@@ -20,9 +20,7 @@
     <div class="content">
         <header>
             <div>
-                Лабораторная работа №2
-            </div>
-            <div>
+                Лабораторная работа №2 <br>
                 Граник Артем Владимирович Р33212 <br>
                 Набиуллин Иван Павлович P33212 <br>
                 Вариант №4182
@@ -32,23 +30,23 @@
             <h1>Попадёт ли точка на плоскости в заданную область?</h1>
             <div class="content_row">
                 <div id="visualization_container" class="column">
-                    <canvas width="320px" height="320px" id="areas" class="empty"></canvas>
+                    <canvas width="320px" height="250px" id="areas" class="empty"></canvas>
                 </div>
                 <div class="column">
                     <form method="get" action="checkPoint" onsubmit="return validate()" name="sendForm" class="send_form">
-                        <div>
+                        <div class="input-coordinate">
                             <label for="X">Введите значение X: </label>
                             <input type="text" id="X" name="X"
                                    placeholder="Число в диапазоне (-3; 5)">
                             <div id="errorX" class="error"></div>
                         </div>
-                        <div>
+                        <div class="input-coordinate">
                             <label for="Y">Введите значение Y: </label>
                             <input type="text" id="Y" name="Y"
                                    placeholder="Число в диапазоне (-3; 3)">
                             <div id="errorY" class="error"></div>
                         </div>
-                        <div>
+                        <div class="input-coordinate">
                             <label>Выберите значение R: </label>
                             <div class="button_block">
                                 <button type="button" class="r_button" id="r_1.0" onclick="setRadius('1.0')">1.0
@@ -70,12 +68,12 @@
                         </div>
                     </form>
                 </div>
-                <div class="column result_table">
                     <%
                         ServletContext context = request.getServletContext();
                         List<Entry> table = (List<Entry>) context.getAttribute("table");
                         if (table != null){
                     %>
+                <div class="column result_table">
                     <table>
                         <tr>
                             <th>X</th>
@@ -101,10 +99,10 @@
                             <td><%= entry.getResult()%>
                             </td>
                         </tr>
-                        <%}
-                        }%>
+                        <%}%>
                     </table>
                 </div>
+                <%}%>
             </div>
         </div>
     </div>

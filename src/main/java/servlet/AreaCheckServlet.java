@@ -1,10 +1,10 @@
 package servlet;
 
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import model.Entry;
 
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class AreaCheckServlet  extends HttpServlet {
             if(y >= 0.0){
                 return (x <= r) && (y <= r);
             }else{
-                return x * x + y * y <= r;
+                return x * x + y * y <= r * r;
             }
         }else{
             if(y <= 0.0){
